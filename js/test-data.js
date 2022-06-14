@@ -20,9 +20,7 @@ function getRandomPositiveInteger (a, b) {
   return Math.floor(result);
 }
 
-function checkLineLength (line, maxLength) {
-  return line.length <=maxLength;
-}
+
 
 function testMessage (){
   let massagestr ='';
@@ -64,12 +62,12 @@ function testname (){
   return namestr;
 }
 
-function createComents () {
+function createComents (max) {
   const testComArray = [];
 
-  for (let i =1;i<getRandomPositiveInteger(1,10);i++){
+  for (let i =1;i<max;i++){
     const testcom = new testComent();
-    testcom.id = i;
+    testcom.id = comentId;
     testcom.avatar= `img/avatar${getRandomPositiveInteger(1,6)}.svg`;
     testcom.message = testMessage ();
     testcom.name =  testname();
@@ -79,18 +77,42 @@ function createComents () {
   return testComArray;
 }
 
-function creatTestPost () {
+function creatTestPost (maxP, maxC) {
   const testPostMasiv =[];
-  for (let i =1;i<=25;i++){
+  for (let i =1;i<=maxP;i++){
 
     const test = new testPpost();
-    test.id =i;
+    test.id =postId();
     test.url = `photos/${i}.jpg`;
-    test.comments= createComents();
+    test.comments= createComents(maxC);
     testPostMasiv.push(test);
   }
   return testPostMasiv;
 }
 
+function simpleIdgenerator (){
+  let lastId=0
+  return function (){
+    last+=1
+    return lastId;
+  };
+}
 
-export {creatTestPost,createComents,testname,testMessage,checkLineLength,getRandomPositiveInteger};
+function getRandomIdFromRange (min,max){
+  const idAray = [];
+  return function () {
+    let curentValue = getRandomPositiveInteger(min,max);
+    if (idAray >=(max-min+1)) {console.log('Увеличь рендж'); return null;}
+    while (idAray.includes(curentValue)) {
+      curentValue = getRandomPositiveInteger (min,max);
+    }
+    idAray.push(curentValue);
+    return curentValue;
+  };
+}
+
+const postId = getRandomIdFromRange(1,100);
+const comentId = simpleIdgenerator();
+
+
+export {creatTestPost,createComents,testname,testMessage,getRandomPositiveInteger,getRandomIdFromRange,simpleIdgenerator};

@@ -1,4 +1,7 @@
 
-import * as test from './main.js';
+import * as test from './test-data.js';
+import * as util from './util.js';
 
-console.log(test.creatTestPost())
+
+let asd =test.creatTestPost(12,14)
+console.log(asd)
