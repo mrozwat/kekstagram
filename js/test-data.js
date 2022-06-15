@@ -67,7 +67,7 @@ function createComents (max) {
 let maxComents = getRandomPositiveInteger(1,max);
   for (let i =1;i<maxComents;i++){
     const testcom = new testComent();
-    testcom.id = comentId;
+    testcom.id = comentId();
     testcom.avatar= `img/avatar${getRandomPositiveInteger(1,6)}.svg`;
     testcom.message = testMessage ();
     testcom.name =  testname();
@@ -93,7 +93,7 @@ function creatTestPost (maxP, maxC) {
 function simpleIdgenerator (){
   let lastId=0
   return function (){
-    last+=1
+    lastId+=1
     return lastId;
   };
 }
