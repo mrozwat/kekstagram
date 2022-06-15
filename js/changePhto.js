@@ -16,9 +16,12 @@ if (document.activeElement === coment || document.activeElement === hasTag)    {
     else { if (e.key === 'Escape') {
       editor.classList.add('hidden');
       body.classList.remove('modal-open');
+      document.querySelector('.img-upload__form').reset();
 }}
 });
   closeEditor.addEventListener('click', ()=> {
     editor.classList.add('hidden');
+    document.querySelector('.img-upload__form').reset();
+    
   });
 } );
