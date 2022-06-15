@@ -36,15 +36,15 @@ function toBig (post) {
   }
   photoDes.textContent = post.desription;
   body.classList.add('modal-open');
-
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      bigPhoto.classList.add('hidden');
+      body.classList.remove('modal-open');
+    }
+  });
 }
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    bigPhoto.classList.add('hidden');
-    body.classList.remove('modal-open');
-  }
-});
+
 
 
 
