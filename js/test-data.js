@@ -64,8 +64,8 @@ function testname (){
 
 function createComents (max) {
   const testComArray = [];
-
-  for (let i =1;i<max;i++){
+let maxComents = getRandomPositiveInteger(1,max);
+  for (let i =1;i<maxComents;i++){
     const testcom = new testComent();
     testcom.id = comentId;
     testcom.avatar= `img/avatar${getRandomPositiveInteger(1,6)}.svg`;
