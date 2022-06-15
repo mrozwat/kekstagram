@@ -10,6 +10,8 @@ const comentTemplate =bigInfo.querySelector('#coment').content;
 const newComent = comentTemplate.querySelector('.social__comment');
 const comentList = document.querySelector('.social__comments');
 const body = document.querySelector('body');
+const cometWrite = document.querySelector('.social__footer-text');
+
 
 const cancelButton = document.querySelector('.big-picture__cancel');
 cancelButton.addEventListener('click', ()=> {
@@ -37,15 +39,15 @@ function toBig (post) {
   photoDes.textContent = post.desription;
   body.classList.add('modal-open');
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+
+    if (document.activeElement === cometWrite )    {}
+    else { if (e.key === 'Escape') {
       bigPhoto.classList.add('hidden');
       body.classList.remove('modal-open');
-    }
+    }}
+
   });
 }
-
-
-
 
 
 export {toBig};
