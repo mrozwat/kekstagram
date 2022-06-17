@@ -17,17 +17,3 @@ if (value.length >= 2 && value.length <= 20 && re.test(value);) {
 return false;
 }, 'ошибка', 2,false);
 
-// dowladForm.addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   var valid = pristine.validate();
-//   alert('Form is valid: ' + valid);
-
-// });
-
-
-//   function validateHas () {
-//     return value.length >= 2 && value.length <= 20 && re.test(hasTags);
-//     console.log('validation')
-//   }
-
-// pristine.addValidator(hasTags,validateHas(hasTags.textContent), 'хэшТег должен начинаться с #');

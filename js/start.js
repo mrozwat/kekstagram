@@ -1,5 +1,4 @@
 
-
 import  './big-picture.js';
 import  './changePhto.js';
 import  './uiSlider.js';
