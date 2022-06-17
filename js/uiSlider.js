@@ -106,13 +106,14 @@ effectSliderElement.noUiSlider.on('update',(...rest) => {
         },
         step: 0.1,
       });
+      effectSliderElement.noUiSlider.set(0);
       effectSliderElement.removeAttribute('disabled');
   });
 
 
 radioButons[2].addEventListener('change', ()=> {
     efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
+    
     imgPreview.style.filter = '';
     effectSliderElement.noUiSlider.updateOptions({
         range: {
@@ -121,12 +122,13 @@ radioButons[2].addEventListener('change', ()=> {
         },
         step: 0.1,
       });
+      effectSliderElement.noUiSlider.set(0);
       effectSliderElement.removeAttribute('disabled');
   });
 
   radioButons[3].addEventListener('change', ()=> {
     efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
+   
     imgPreview.style.filter = '';
     effectSliderElement.noUiSlider.updateOptions({
         range: {
@@ -135,12 +137,13 @@ radioButons[2].addEventListener('change', ()=> {
         },
         step: 1,
       });
+      effectSliderElement.noUiSlider.set(0);
       effectSliderElement.removeAttribute('disabled');
   });
 
   radioButons[4].addEventListener('change', ()=> {
     efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
+    
     imgPreview.style.filter = '';
     effectSliderElement.noUiSlider.updateOptions({
         range: {
@@ -149,12 +152,13 @@ radioButons[2].addEventListener('change', ()=> {
         },
         step: 0.1,
       });
+      effectSliderElement.noUiSlider.set(0);
       effectSliderElement.removeAttribute('disabled');
   });
 
   radioButons[5].addEventListener('change', ()=> {
     efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
+    
     imgPreview.style.filter = '';
     effectSliderElement.noUiSlider.updateOptions({
         range: {
@@ -163,6 +167,7 @@ radioButons[2].addEventListener('change', ()=> {
         },
         step: 0.1,
       });
+      effectSliderElement.noUiSlider.set(0);
       effectSliderElement.removeAttribute('disabled');
   });
 
