@@ -31,5 +31,13 @@ function renderPost (data) {
   }
 }
 
-const render=  createLoader(renderPost,console.error);
+const error =document.querySelector('#errorData');
+
+function rendorError (err) {
+
+error.classList.remove('hidden')
+}
+
+
+const render=  createLoader(renderPost,rendorError);
 render()
