@@ -1,3 +1,4 @@
+import {resetvalue} from './uiSlider.js'
 const editor = document.querySelector('.img-upload__overlay');
 const downloadButton = document.querySelector('#upload-file');
 const body = document.querySelector('body');
@@ -17,17 +18,14 @@ downloadButton.addEventListener('input',()=> {
       editor.classList.add('hidden');
       body.classList.remove('modal-open');
       document.querySelector('.img-upload__form').reset();
+      resetvalue()
     }}
   });
   closeEditor.addEventListener('click', ()=> {
     editor.classList.add('hidden');
     document.querySelector('.img-upload__form').reset();
-
+    resetvalue()
   });
 } );
 
 
-function resetEditor () {
-
-  
-}

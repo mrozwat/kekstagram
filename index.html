@@ -212,24 +212,26 @@
   </template>
 
   <!-- Сообщение с ошибкой загрузки изображения -->
-  <template id="error">
-    <section class="error">
+  
+   
+  
+    <section class="error hidden error_target" id="error">
       <div class="error__inner">
-        <h2 class="error__title">Ошибка загрузки файла</h2>
-        <button type="button" class="error__button">Загрузить другой файл</button>
+        <h2 class="error__title">Ошибка попробуйте еще раз</h2>
+        <button type="button" class="error__button">Печально!</button>
       </div>
     </section>
-  </template>
+  
 
   <!-- Сообщение об успешной загрузке изображения -->
-  <template id="success">
-    <section class="success">
+  
+    <section class="success hidden succes_target" id="succes">
       <div class="success__inner">
         <h2 class="success__title">Изображение успешно загружено</h2>
         <button type="button" class="success__button">Круто!</button>
       </div>
     </section>
-  </template>
+  
 
   <!-- Экран загрузки изображения -->
   <template id="messages">
