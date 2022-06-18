@@ -36,7 +36,7 @@ function toBig (post) {
     cAvatar.alt = post.comments[i].name;
     comentList.appendChild(coment);
   }
-  photoDes.textContent = post.desription;
+  photoDes.textContent = post.description;
   body.classList.add('modal-open');
   document.addEventListener('keydown', (e) => {
 
