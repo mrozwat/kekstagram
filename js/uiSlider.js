@@ -13,7 +13,7 @@ scaleToBig.addEventListener('click', ()=> {
     imgPreview.style.transform = `scale(${value / 100})`;
     value+= '%';
     scaleValue.value=value;
-    console.log(scaleValue.value);
+    
   }
 
 });
@@ -171,4 +171,14 @@ radioButons[5].addEventListener('change', ()=> {
   effectSliderElement.removeAttribute('disabled');
 });
 
+function resetvalue () {
+  effectSliderElement.noUiSlider.set(0);
+  efectValue.value = 0;
+  imgPreview.style.filter = '';
+  document.querySelector('.img-upload__form').reset();
+  scaleValue.value = 100+'%'
+  effectSliderElement.setAttribute('disabled', true);
+  imgPreview.style.transform = 'scale(1)';
+}
 
+ export {resetvalue}

@@ -16,6 +16,4 @@ const createLoader = (onSuccess, onError) => () => fetch(
     onError(err);
   });
 
- 
-
 export {createLoader};

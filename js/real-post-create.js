@@ -3,6 +3,7 @@
 import { toBig } from './big-picture.js';
 import { createLoader } from './get-data.js';
 
+const error =document.querySelector('#errorData');
 
 function renderPost (data) {
   const templatePost = document.querySelector('#picture').content;
@@ -11,8 +12,8 @@ function renderPost (data) {
 
   for (let i = 0; i<25;i++){
     const post = newPost.cloneNode(true);
-    
-     let realData = data[i];
+
+    const realData = data[i];
 
     const picture = post.querySelector('.picture__img');
     const likes = post.querySelector('.picture__likes');
@@ -31,13 +32,12 @@ function renderPost (data) {
   }
 }
 
-const error =document.querySelector('#errorData');
 
 function rendorError (err) {
-
-error.classList.remove('hidden')
+  error.classList.remove('hidden');
+  console.log(err);
 }
 
 
 const render=  createLoader(renderPost,rendorError);
-render()
+render();

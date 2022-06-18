@@ -6,22 +6,28 @@ const coment = document.querySelector('.text__description');
 const hasTag = document.querySelector('.text__hashtags');
 
 
-downloadButton.addEventListener('change',()=> {
+downloadButton.addEventListener('input',()=> {
   editor.classList.remove('hidden');
   body.classList.add('modal-open');
 
   document.addEventListener('keydown', (e) => {
 
-if (document.activeElement === coment || document.activeElement === hasTag)    {return}
+    if (document.activeElement === coment || document.activeElement === hasTag)    {}
     else { if (e.key === 'Escape') {
       editor.classList.add('hidden');
       body.classList.remove('modal-open');
       document.querySelector('.img-upload__form').reset();
-}}
-});
+    }}
+  });
   closeEditor.addEventListener('click', ()=> {
     editor.classList.add('hidden');
     document.querySelector('.img-upload__form').reset();
-    
+
   });
 } );
+
+
+function resetEditor () {
+
+  
+}
