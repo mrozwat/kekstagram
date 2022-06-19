@@ -15,9 +15,9 @@ const manyComentsButton = folterBlock.querySelector('#filter-discussed');
 const renderSortedAray =  createLoader(sortByComents,rendorError);
 const renderRandom =  createLoader(randomPhoto,rendorError);
 
-const randomDebonce = debounce(renderRandom,500);
-const sortDebonce = debounce(renderSortedAray,500);
-const defaltRenderDebonce = debounce(render,500);
+const randomDebonce = debounce(renderRandom,300);
+const sortDebonce = debounce(renderSortedAray,300);
+const defaltRenderDebonce = debounce(render,300);
 
 
 function renderPost (data) {
