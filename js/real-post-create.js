@@ -20,18 +20,17 @@ const sortDebonce = debounce(renderSortedAray,1000);
 const defaltRenderDebonce = debounce(render,1000);
 
 
-
 function renderPost (data) {
-  pictureContaner.innerHTML='';
+
   const templatePost = document.querySelector('#picture').content;
   const newPost = templatePost.querySelector('.picture');
-  const usersPostSection = document.querySelector('#addedPictures');
+  const usersPostSection = document.querySelector('.pictures');
 
   for (let i = 0; i<25;i++){
     const post = newPost.cloneNode(true);
 
     const realData = data[i];
-
+    post.id = 'addPicture';
     const picture = post.querySelector('.picture__img');
     const likes = post.querySelector('.picture__likes');
     const coments = post.querySelector('.picture__comments');
@@ -46,7 +45,31 @@ function renderPost (data) {
 
     usersPostSection.appendChild(post);
   }
-  showFilters();
+
+  const addedPhoto = document.querySelectorAll('#addPicture');
+
+  showFilters(document.querySelectorAll('#addPicture'));
+
+  function showFilters (addedPhoto) {
+    folterBlock.classList.remove('hidden');
+    defaultButton.addEventListener('click', () => {
+      addedPhoto.forEach((element)=> element.remove());
+      defaltRenderDebonce();
+
+
+    });
+    randomButton.addEventListener('click', () => {
+      addedPhoto.forEach((element)=> element.remove());
+      randomDebonce();
+
+    });
+    manyComentsButton.addEventListener('click', () => {
+      addedPhoto.forEach((element)=> element.remove());
+      sortDebonce();
+    });
+  }
+
+
 }
 
 function rendorError (err) {
@@ -54,23 +77,9 @@ function rendorError (err) {
   console.log(err);
 }
 
-function showFilters () {
-  folterBlock.classList.remove('hidden');
-  defaultButton.addEventListener('click', () => {
-    defaltRenderDebonce();
-
-  });
-  randomButton.addEventListener('click', () => {
-    randomDebonce();
-  });
-  manyComentsButton.addEventListener('click', () => {
-    sortDebonce();
-  });
-}
-
 
 function sortByComents (array) {
-  pictureContaner.innerHTML='';
+
   array.sort((a,b)  => {if (a.comments.length > b.comments.length) {
     return -1;
   }
@@ -83,7 +92,7 @@ function sortByComents (array) {
 }
 
 function randomPhoto (array) {
-  pictureContaner.innerHTML='';
+
   for (let i = 0 ; (i < 10) && (i < array.length) ; i++) {
     const  r = Math.floor(Math.random() * (array.length - i)) + i;
     const photo = array[r];
@@ -110,3 +119,6 @@ function debounce(f, ms) {
 }
 
 render();
+
+
+
