@@ -3,6 +3,8 @@
 import { toBig } from './big-picture.js';
 import { createLoader } from './get-data.js';
 
+const render=  createLoader(renderPost,rendorError);
+
 const error =document.querySelector('#errorData');
 const pictureContaner = document.querySelector('#addedPictures');
 const folterBlock = document.querySelector('#img-filtersid');
@@ -15,11 +17,12 @@ const renderRandom =  createLoader(randomPhoto,rendorError);
 
 const randomDebonce = debounce(renderRandom,1000);
 const sortDebonce = debounce(renderSortedAray,1000);
-const defaltRenderDebonce = debounce(renderSortedAray,1000);
+const defaltRenderDebonce = debounce(render,1000);
 
-const render=  createLoader(renderPost,rendorError);
+
 
 function renderPost (data) {
+  pictureContaner.innerHTML='';
   const templatePost = document.querySelector('#picture').content;
   const newPost = templatePost.querySelector('.picture');
   const usersPostSection = document.querySelector('#addedPictures');
