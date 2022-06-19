@@ -1,6 +1,6 @@
 import * as test from './test-data.js';
 import * as util from './util.js';
-import { toBig } from './big-picture.js';
+import { toBig } from '../big-picture.js';
 
 const testData = test.creatTestPost(20,20);
 const templatePost = document.querySelector('#picture').content;
@@ -26,6 +26,6 @@ for (let i = 0; i<testData.length;i++){
   usersPostSection.appendChild(post);
 
 }
-console.log(testData)
+
 
 

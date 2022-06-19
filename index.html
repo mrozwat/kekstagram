@@ -12,9 +12,16 @@
 
 <body>
   <main>
+    <!-- Сообщение с ошибкой загрузки данных -->
+ 
+  <section class="error hidden " id="errorData" >
+    <div class="error__inner">
+      <h2 class="error__title">Ошибка загрузки данных</h2>
+    </div>
+  </section>
 
     <!-- Фильтрация изображений от других пользователей -->
-    <section class="img-filters  img-filters--inactive  container">
+    <section class="img-filters  hidden  container" id="img-filtersid">
       <h2 class="img-filters__title  visually-hidden">Фильтр фотографий</h2>
       <form class="img-filters__form" action="index.html" method="get" autocomplete="off">
         <button type=button class="img-filters__button  img-filters__button--active" id="filter-default">По умолчанию</button>
@@ -35,7 +42,7 @@
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
-              <input type="file" id="upload-file" class="img-upload__input  visually-hidden" name="filename" action="https://25.javascript.pages.academy/kekstagram" required>
+              <input type="file"  accept="image/png, image/jpeg" id="upload-file" class="img-upload__input  visually-hidden" name="filename" action="https://25.javascript.pages.academy/kekstagram" required>
               <label for="upload-file" class="img-upload__label  img-upload__control">Загрузить</label>
             </fieldset>
 
@@ -53,7 +60,7 @@
 
                   <!-- Предварительный просмотр изображения -->
                   <div class="img-upload__preview">
-                    <img src="img/upload-default-image.jpg" alt="Предварительный просмотр фотографии">
+                    <img src="img/upload-default-image.jpg" alt="Предварительный просмотр фотографии" id="photoprewiew2">
                   </div>
 
                   <!-- Изменение глубины эффекта, накладываемого на изображение -->
@@ -129,7 +136,8 @@
       </section>
 
       <!-- Здесь будут изображения других пользователей -->
-
+<section id="addedPictures" class="pictures  container">
+</section>
     </section>
 
     <!-- Полноэкранный показ изображения -->
@@ -145,7 +153,7 @@
         <!-- Информация об изображении. Подпись, комментарии, количество лайков -->
         <div class="big-picture__social  social">
           <div class="social__header">
-            <img class="social__picture" src="img/avatar1.svg" alt="Аватар автора фотографии" width="35" height="35">
+            <img class="social__picture" src="img/avatar-1.svg" alt="Аватар автора фотографии" width="35" height="35">
             <p class="social__caption">Тестим новую камеру! =)</p>
             <p class="social__likes">Нравится <span class="likes-count">356</span></p>
           </div>
@@ -155,7 +163,7 @@
           <ul class="social__comments">
             <template id="coment">
             <li class="social__comment">
-              <img class="social__picture" src="img/avatar4.svg" alt="Аватар комментатора фотографии" width="35" height="35">
+              <img class="social__picture" src="img/avatar-4.svg" alt="Аватар комментатора фотографии" width="35" height="35">
               <p class="social__text">Мега фото! Просто обалдеть. Как вам так удалось?</p>
             </li>
           </template>
@@ -166,7 +174,7 @@
 
           <!-- Форма для отправки комментария -->
           <div class="social__footer">
-            <img class="social__picture" src="img/avatar6.svg" alt="Аватар комментатора фотографии" width="35" height="35">
+            <img class="social__picture" src="img/avatar-6.svg" alt="Аватар комментатора фотографии" width="35" height="35">
             <input type="text" class="social__footer-text" placeholder="Ваш комментарий...">
             <button type="button" class="social__footer-btn" name="button">Отправить</button>
           </div>
@@ -205,24 +213,23 @@
   </template>
 
   <!-- Сообщение с ошибкой загрузки изображения -->
-  <template id="error">
-    <section class="error">
+    <section class="error hidden error_target" id="error">
       <div class="error__inner">
-        <h2 class="error__title">Ошибка загрузки файла</h2>
-        <button type="button" class="error__button">Загрузить другой файл</button>
+        <h2 class="error__title">Ошибка попробуйте еще раз</h2>
+        <button type="button" class="error__button">Печально!</button>
       </div>
     </section>
-  </template>
+  
 
   <!-- Сообщение об успешной загрузке изображения -->
-  <template id="success">
-    <section class="success">
+  
+    <section class="success hidden succes_target" id="succes">
       <div class="success__inner">
         <h2 class="success__title">Изображение успешно загружено</h2>
         <button type="button" class="success__button">Круто!</button>
       </div>
     </section>
-  </template>
+  
 
   <!-- Экран загрузки изображения -->
   <template id="messages">
@@ -232,6 +239,8 @@
   <script src="./js/nouislider.js" ></script>
  <script type="module" src="/js/start.js" ></script>
  
+ 
+
 
  
 </body>

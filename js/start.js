@@ -1,8 +1,8 @@
-import * as test from './test-data.js';
-import * as util from './util.js';
-import * as testPostCreate from './test-post-crate.js';
-import * as bigPicture from './big-picture.js';
-import * as changePhto from './changePhto.js';
-import * as uiSlider from './uiSlider.js';
 
-
+import  './big-picture.js';
+import  './changePhto.js';
+import  './uiSlider.js';
+import './get-data.js';
+import './real-post-create.js';
+import './photo-submit.js';
+import './changeprewiPhoto.js';

@@ -21,11 +21,12 @@ cancelButton.addEventListener('click', ()=> {
 
 
 function toBig (post) {
-
   bigPhoto.classList.remove('hidden');
   bigPhotoUrl.src = post.url;
   likesCount.textContent= post.likes;
   comentCount.textContent= post.comments.length;
+  const comentsContaner = document.querySelector('.social__comments')
+  comentsContaner.innerHTML="";
 
   for (let i=0; i<post.comments.length;i++){
     const coment = newComent.cloneNode(true);
@@ -36,7 +37,7 @@ function toBig (post) {
     cAvatar.alt = post.comments[i].name;
     comentList.appendChild(coment);
   }
-  photoDes.textContent = post.desription;
+  photoDes.textContent = post.description;
   body.classList.add('modal-open');
   document.addEventListener('keydown', (e) => {
 

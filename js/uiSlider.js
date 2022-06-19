@@ -13,7 +13,7 @@ scaleToBig.addEventListener('click', ()=> {
     imgPreview.style.transform = `scale(${value / 100})`;
     value+= '%';
     scaleValue.value=value;
-    console.log(scaleValue.value);
+    
   }
 
 });
@@ -88,82 +88,97 @@ effectSliderElement.noUiSlider.on('update',(...rest) => {
 
 //нужно убрать слайдер
 
-  radioButons[0].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.setAttribute('disabled', true);
-  });
+radioButons[0].addEventListener('change', ()=> {
+  efectValue.value = 0;
+  effectSliderElement.noUiSlider.set(0);
+  imgPreview.style.filter = '';
+  effectSliderElement.setAttribute('disabled', true);
+});
 
-  radioButons[1].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.noUiSlider.updateOptions({
-        range: {
-          min: 0,
-          max: 1,
-        },
-        step: 0.1,
-      });
-      effectSliderElement.removeAttribute('disabled');
+radioButons[1].addEventListener('change', ()=> {
+  efectValue.value = 0;
+  effectSliderElement.noUiSlider.set(0);
+  imgPreview.style.filter = '';
+  effectSliderElement.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: 1,
+    },
+    step: 0.1,
   });
+  effectSliderElement.noUiSlider.set(0);
+  effectSliderElement.removeAttribute('disabled');
+});
 
 
 radioButons[2].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.noUiSlider.updateOptions({
-        range: {
-          min: 0,
-          max: 1,
-        },
-        step: 0.1,
-      });
-      effectSliderElement.removeAttribute('disabled');
+  efectValue.value = 0;
+
+  imgPreview.style.filter = '';
+  effectSliderElement.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: 1,
+    },
+    step: 0.1,
   });
+  effectSliderElement.noUiSlider.set(0);
+  effectSliderElement.removeAttribute('disabled');
+});
 
-  radioButons[3].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.noUiSlider.updateOptions({
-        range: {
-          min: 0,
-          max: 100,
-        },
-        step: 1,
-      });
-      effectSliderElement.removeAttribute('disabled');
+radioButons[3].addEventListener('change', ()=> {
+  efectValue.value = 0;
+
+  imgPreview.style.filter = '';
+  effectSliderElement.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: 100,
+    },
+    step: 1,
   });
+  effectSliderElement.noUiSlider.set(0);
+  effectSliderElement.removeAttribute('disabled');
+});
 
-  radioButons[4].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.noUiSlider.updateOptions({
-        range: {
-          min: 0,
-          max: 3,
-        },
-        step: 0.1,
-      });
-      effectSliderElement.removeAttribute('disabled');
+radioButons[4].addEventListener('change', ()=> {
+  efectValue.value = 0;
+
+  imgPreview.style.filter = '';
+  effectSliderElement.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: 3,
+    },
+    step: 0.1,
   });
+  effectSliderElement.noUiSlider.set(0);
+  effectSliderElement.removeAttribute('disabled');
+});
 
-  radioButons[5].addEventListener('change', ()=> {
-    efectValue.value = 0;
-    effectSliderElement.noUiSlider.set(0);
-    imgPreview.style.filter = '';
-    effectSliderElement.noUiSlider.updateOptions({
-        range: {
-          min: 1,
-          max: 3,
-        },
-        step: 0.1,
-      });
-      effectSliderElement.removeAttribute('disabled');
+radioButons[5].addEventListener('change', ()=> {
+  efectValue.value = 0;
+
+  imgPreview.style.filter = '';
+  effectSliderElement.noUiSlider.updateOptions({
+    range: {
+      min: 1,
+      max: 3,
+    },
+    step: 0.1,
   });
+  effectSliderElement.noUiSlider.set(0);
+  effectSliderElement.removeAttribute('disabled');
+});
 
+function resetvalue () {
+  effectSliderElement.noUiSlider.set(0);
+  efectValue.value = 0;
+  imgPreview.style.filter = '';
+  document.querySelector('.img-upload__form').reset();
+  scaleValue.value = 100+'%'
+  effectSliderElement.setAttribute('disabled', true);
+  imgPreview.style.transform = 'scale(1)';
+}
 
+ export {resetvalue}
