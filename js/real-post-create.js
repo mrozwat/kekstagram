@@ -15,9 +15,9 @@ const manyComentsButton = folterBlock.querySelector('#filter-discussed');
 const renderSortedAray =  createLoader(sortByComents,rendorError);
 const renderRandom =  createLoader(randomPhoto,rendorError);
 
-const randomDebonce = debounce(renderRandom,1000);
-const sortDebonce = debounce(renderSortedAray,1000);
-const defaltRenderDebonce = debounce(render,1000);
+const randomDebonce = debounce(renderRandom,500);
+const sortDebonce = debounce(renderSortedAray,500);
+const defaltRenderDebonce = debounce(render,500);
 
 
 function renderPost (data) {
@@ -53,19 +53,20 @@ function renderPost (data) {
   function showFilters (addedPhoto) {
     folterBlock.classList.remove('hidden');
     defaultButton.addEventListener('click', () => {
-      addedPhoto.forEach((element)=> element.remove());
-      defaltRenderDebonce();
 
+      defaltRenderDebonce();
+      addedPhoto.forEach((element)=> element.remove());
 
     });
     randomButton.addEventListener('click', () => {
-      addedPhoto.forEach((element)=> element.remove());
+
       randomDebonce();
+      addedPhoto.forEach((element)=> element.remove());
 
     });
     manyComentsButton.addEventListener('click', () => {
-      addedPhoto.forEach((element)=> element.remove());
       sortDebonce();
+      addedPhoto.forEach((element)=> element.remove());
     });
   }
 
@@ -119,6 +120,5 @@ function debounce(f, ms) {
 }
 
 render();
-
 
 
