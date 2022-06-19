@@ -21,11 +21,12 @@ cancelButton.addEventListener('click', ()=> {
 
 
 function toBig (post) {
-
   bigPhoto.classList.remove('hidden');
   bigPhotoUrl.src = post.url;
   likesCount.textContent= post.likes;
   comentCount.textContent= post.comments.length;
+  const comentsContaner = document.querySelector('.social__comments')
+  comentsContaner.innerHTML="";
 
   for (let i=0; i<post.comments.length;i++){
     const coment = newComent.cloneNode(true);
